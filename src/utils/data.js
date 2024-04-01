@@ -1,7 +1,7 @@
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { CiMobile1 } from "react-icons/ci";
 import { MdWorkspacesOutline } from "react-icons/md";
-export const projectExperience = [
+const projectExperience = [
   {
     name: "Website Design",
     projects: 76,
@@ -24,6 +24,7 @@ export const projectExperience = [
 
 export const WhatDoIHelp = [
   "I will help you with finging a solution and solve your problem, We use process design to create digital products. Besides that also help their business.",
+  
   "We use process design to create digital products. Besides that also help their business",
 ];
 
@@ -154,3 +155,6 @@ export const sliderSettings = {
     },
   ],
 };
+
+
+export default projectExperience;
