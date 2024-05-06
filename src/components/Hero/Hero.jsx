@@ -39,7 +39,7 @@ const Hero = () => {
         >
           <motion.img 
           variants={slideIn("up","tween", 0.5, 1.3)}
-          src="./person.png" alt="" />
+          src="./yogesh-2.png" alt="" />
         </motion.div>
         {/* lower elments */}
         <div className={css.lowerElements}>

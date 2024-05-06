@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import css from './Header.module.scss';
 import { Component } from 'react'
 import {BiMenuAltRight, BiPhoneCall} from 'react-icons/bi';
 import {motion} from 'framer-motion';
 import {getMenuStyles, headerVariants} from '../../utils/motion'
 import useHeaderShadow from '../../hooks/useHeaderShadow';
+import useOutsiderAlerter from '../../hooks/useOutsideAlerter';
+
 const Header = () => {
 
   const [menuOpened, setMenuOpened]=useState(false);
   const headerShadow=useHeaderShadow();
+  const menuRef=useRef();
+  useOutsiderAlerter({
+    menuRef,
+    setMenuOpened,
+  });
+
   return (
     <motion.div 
         variants={headerVariants}
@@ -23,23 +31,29 @@ const Header = () => {
         Yogesh Zade
         </div>
         <ul 
+        ref={menuRef}
         style={getMenuStyles(menuOpened)}
         className={`flexCenter ${css.menu}`}>
           <li>
-            <a href="">Services</a>
+            <a href="#service">Services</a>
           </li>
           <li>
-            <a href="">Experience</a>
+            <a href="#experience">Experience</a>
           </li>
           <li>
-            <a href="">Portfolio</a>
+            <a href="#portfolio">Portfolio</a>
           </li>
           <li>
-            <a href="">Testimonials</a>
+            <a href="#testimonial">Testimonials</a>
+          </li>
+          <li>
+            <a href="https://github.com/yogeshzade" target='_blank'>GitHub</a>
           </li>
           <li className={`flexCenter ${css.phone}`}>
-          <p>+91 8055980041</p>
+          <a href='tel:8055980041'>
           <BiPhoneCall size={"40px"} />
+          </a>
+       
           </li>
         </ul>
         <div className={css.menuIcon} 
